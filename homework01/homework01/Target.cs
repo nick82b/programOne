@@ -48,13 +48,9 @@ namespace homework01
         public bool canSwap { get; set; }
 
         //print all target data
-        public void printTargetData(/*pass in the values here*/)
+        public void printTargetData()
         {
-            /*bool nameFind = false;
-            for (int i = 0; i <= num; i++)
-            {
-                if (target[i].name.ToUpper() == fileString.Substring(6).ToUpper())
-                {*/
+            
                     Console.WriteLine(name);
                     Console.WriteLine(xVal);
                     Console.WriteLine(yVal);
@@ -65,25 +61,38 @@ namespace homework01
                     Console.WriteLine(spawnRate);
                     Console.WriteLine(canSwap);
                     Console.WriteLine('\n');
-                   /* nameFind = true;
-                }
-            }
-
-            if (nameFind == false)
-            {
-                Console.WriteLine("There is no target with that name.");
-            }*/
-        }
+         }
         //print target names
-        public void printTargetName()
+        public void printTargetName(int counter)
         {
-            Console.WriteLine(name);           
+
+           int i = 1;
+                
+            while(i <= counter)
+            {
+                Console.WriteLine("{0}:     {1}", i++, name);
+
+            }
+            
+            
+                       
         }
     
        
        //convert to pig latin
-        public void printPigLatin()
+        public void printPiggyLatin()
         {
+            Console.WriteLine("[argetTay]");
+            Console.WriteLine("ameNay={0}",name);
+            Console.WriteLine("Xway={0}", xVal);
+            Console.WriteLine("Yway={0}", yVal);
+            Console.WriteLine("Zway={0}", zVal);
+            Console.WriteLine("riendFay={0}", friend);
+            Console.WriteLine("ointsPay={0}", points);
+            Console.WriteLine("lashRateFay={0}", flashRate);
+            Console.WriteLine("pawnRateSay={0}", spawnRate);
+            Console.WriteLine("anSwapCay={0}", canSwap);
+            Console.WriteLine('\n');
 
         }
 

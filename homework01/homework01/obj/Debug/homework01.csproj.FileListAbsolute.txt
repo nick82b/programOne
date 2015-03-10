@@ -7,3 +7,6 @@ c:\users\nick\documents\visual studio 2013\Projects\homework01\homework01\obj\De
 C:\Users\Nick\Source\Repos\programOne\homework01\homework01\bin\Debug\homework01.exe.config
 C:\Users\Nick\Source\Repos\programOne\homework01\homework01\obj\Debug\homework01.exe
 C:\Users\Nick\Source\Repos\programOne\homework01\homework01\obj\Debug\homework01.pdb
+C:\Users\Nick\Source\Repos\programOne\homework01\homework01\bin\Debug\homework01.exe
+C:\Users\Nick\Source\Repos\programOne\homework01\homework01\bin\Debug\homework01.pdb
+C:\Users\Nick\Source\Repos\programOne\homework01\homework01\obj\Debug\homework01.csprojResolveAssemblyReference.cache

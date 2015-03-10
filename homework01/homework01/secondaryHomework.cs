@@ -15,23 +15,24 @@ namespace homework01
         class Program
     {
         //print all target data
-        private static void PrintAllTargetData(List<Target> tar)
+        private static void PrintAllTargetData(List<Target> tar, int tarNum)
         {
+            int count = tarNum;
             
-            int count = 0;
-            for (int i = 0; i < 6; i++)
+            tar[count].printTargetData();
+            /*for (int i = 0; i < 6; i++)
             {
-                tar[i].printTargetData();
-            }
+                tar[0].printTargetData();
+            }*/
         }
         
             
         //print target names
         private static void PrintTargetName(List<Target> tar)
-        {
+        {            
             for (int i = 0; i < tar.Count; i++)
-            {               
-                tar[i].printTargetName();
+            {
+                tar[i].printTargetName(tar.Count);
             }
         }
         
@@ -41,20 +42,26 @@ namespace homework01
             var ordered = tar.OrderBy(x => x.name.ToUpper()).ToList();
             for (int i = 0; i < ordered.Count; i++)
             {
-                ordered[i].printTargetName();
+                ordered[i].printTargetName(ordered.Count);
             }
         }
 
        //convert to pig latin
-        private static void printPigLatin()
+        private static void printPigLatin(List<Target> tar)
         {
-
+            for (int i = 0; i < tar.Count; i++)
+            {
+                tar[i].printPiggyLatin();
+            }
+            
         }
 
        //is target a friend
-        private static void friendTarget(List<Target> tar)
+        private static void friendTarget(List<Target> tar, int tarNum)
         {
+            int count = tarNum;
 
+            tar[count].isFriend();
         }
         static void Main(string[] args)
         {
@@ -65,7 +72,7 @@ namespace homework01
             Target temp;
             int iter = 0;
             string info;
-                 
+            int friendFoe;     
             
             
             using (TextReader reader = File.OpenText(args[0]))
@@ -159,18 +166,22 @@ namespace homework01
                                 PrintTargetName(targets);
                                 break;
                             case 2:
-                                PrintAllTargetData(targets);
+                                Console.WriteLine("Choose a Target Number: ");
+                                friendFoe = int.Parse(Console.ReadLine());
+                                PrintAllTargetData(targets, friendFoe);
                                 break;
                             case 3:
                                 PrintOrderedTarget(targets);
                                 break;
                             case 4:
-                                printPigLatin();
+                                printPigLatin(targets);
                                 break;
                             case 5:
-                                friendTarget(targets);
+                                Console.WriteLine("Choose a Target Number: ");
+                                friendFoe = int.Parse(Console.ReadLine());
+                                friendTarget(targets, friendFoe - 1);
                                 break;
-                            case 6:
+                            case 6:                                
                                 break;
                     }
                 }
