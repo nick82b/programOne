@@ -34,6 +34,7 @@ namespace homework01
             {
                 tar[i].printTargetName(tar.Count);
             }
+            Target.iterator = 0;
         }
         
         //print targets in alphabetical order    
@@ -72,8 +73,8 @@ namespace homework01
             Target temp;
             int iter = 0;
             string info;
-            int friendFoe;     
-            
+            int friendFoe;
+            string exit;
             
             using (TextReader reader = File.OpenText(args[0]))
             {
@@ -146,7 +147,7 @@ namespace homework01
                     
                     //Switch statement for user choice
                     int menuchoice  = 0;  
-                    while (menuchoice != 7)  
+                    while (menuchoice != 6)  
                    {  
 
                         Console.WriteLine("MENU");  
@@ -181,8 +182,12 @@ namespace homework01
                                 friendFoe = int.Parse(Console.ReadLine());
                                 friendTarget(targets, friendFoe - 1);
                                 break;
-                            case 6:                                
+                            case 6:
                                 break;
+                            default:
+                                Console.WriteLine("Incorrect entry, must be an integer 1 through 6");
+                                break;
+
                     }
                 }
             

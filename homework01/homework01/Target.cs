@@ -8,8 +8,10 @@ using System.Collections;
 
 namespace homework01
 {
+   
     class Target
     {
+        
         public Target()
         {
             
@@ -63,16 +65,17 @@ namespace homework01
                     Console.WriteLine('\n');
          }
         //print target names
+        public static int iterator = 0;
         public void printTargetName(int counter)
         {
 
-           int i = 1;
-                
-            while(i <= counter)
-            {
-                Console.WriteLine("{0}:     {1}", i++, name);
+                       
 
-            }
+           for (int i = 1; i <= 1; i++)
+           {
+               Console.WriteLine("{0}:     {1}", ++iterator, name);
+
+           }
             
             
                        
@@ -82,8 +85,24 @@ namespace homework01
        //convert to pig latin
         public void printPiggyLatin()
         {
+            //Char[] names = name.ToCharArray();            
+            
+            string tempName;
+            String names = name;
+            tempName = names.Substring(1);
+            
+            
+            
             Console.WriteLine("[argetTay]");
-            Console.WriteLine("ameNay={0}",name);
+            Console.Write("ameNay={0}",tempName);
+            if (names[0] == 'A' || names[0] == 'E' || names[0] == 'I' || names[0] == 'O' || names[0] == 'U')
+            {
+                Console.Write("{0}way\n", names[0]);
+            }
+            else if (names[0] != 'A' || names[0] != 'E' || names[0] != 'I' || names[0] != 'O' || names[0] != 'U')
+            {
+                Console.Write("{0}ay\n", names[0]);
+            }
             Console.WriteLine("Xway={0}", xVal);
             Console.WriteLine("Yway={0}", yVal);
             Console.WriteLine("Zway={0}", zVal);
