@@ -90,29 +90,46 @@ namespace homework01
             string tempName;
             String names = name;
             tempName = names.Substring(1);
-            
-            
-            
-            Console.WriteLine("[argetTay]");
-            Console.Write("ameNay={0}",tempName);
-            if (names[0] == 'A' || names[0] == 'E' || names[0] == 'I' || names[0] == 'O' || names[0] == 'U')
-            {
-                Console.Write("{0}way\n", names[0]);
-            }
-            else if (names[0] != 'A' || names[0] != 'E' || names[0] != 'I' || names[0] != 'O' || names[0] != 'U')
-            {
-                Console.Write("{0}ay\n", names[0]);
-            }
-            Console.WriteLine("Xway={0}", xVal);
-            Console.WriteLine("Yway={0}", yVal);
-            Console.WriteLine("Zway={0}", zVal);
-            Console.WriteLine("riendFay={0}", friend);
-            Console.WriteLine("ointsPay={0}", points);
-            Console.WriteLine("lashRateFay={0}", flashRate);
-            Console.WriteLine("pawnRateSay={0}", spawnRate);
-            Console.WriteLine("anSwapCay={0}", canSwap);
-            Console.WriteLine('\n');
 
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Nick\Documents\Piggy.ini", true))
+            {
+
+                file.WriteLine("[argetTay]");
+                file.Write("ameNay={0}", tempName);
+                if (names[0] == 'A' || names[0] == 'E' || names[0] == 'I' || names[0] == 'O' || names[0] == 'U')
+                {
+                    file.Write("{0}way\n", names[0]);
+                }
+                else if (names[0] != 'A' || names[0] != 'E' || names[0] != 'I' || names[0] != 'O' || names[0] != 'U')
+                {
+                    file.Write("{0}ay\n", names[0]);
+                }
+                file.WriteLine("Xway={0}", xVal);
+                file.WriteLine("Yway={0}", yVal);
+                file.WriteLine("Zway={0}", zVal);
+                file.Write("riendFay=");
+                if (friend == true)
+                {
+                    file.Write("rueTay\n");
+                }
+                else if (friend == false)
+                {
+                    file.Write("alseFay\n");
+                }
+                file.WriteLine("ointsPay={0}", points);
+                file.WriteLine("lashRateFay={0}", flashRate);
+                file.WriteLine("pawnRateSay={0}", spawnRate);
+                file.Write("anSwapCay=");
+                if (canSwap == true)
+                {
+                    file.Write("rueTay\n");
+                }
+                else if (canSwap == false)
+                {
+                    file.Write("alseFay\n");
+                }
+                file.WriteLine("\n");
+            }
         }
 
         //determine if target is a friend

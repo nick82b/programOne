@@ -19,11 +19,8 @@ namespace homework01
         {
             int count = tarNum;
             
-            tar[count].printTargetData();
-            /*for (int i = 0; i < 6; i++)
-            {
-                tar[0].printTargetData();
-            }*/
+            tar[count - 1].printTargetData();
+          
         }
         
             
@@ -45,6 +42,7 @@ namespace homework01
             {
                 ordered[i].printTargetName(ordered.Count);
             }
+            Target.iterator = 0;
         }
 
        //convert to pig latin
@@ -68,14 +66,25 @@ namespace homework01
         {
             string stuff;
             List<Target> targets = new List<Target>();
-            char[] delimiterChars = { '=', ' ', '\t'};
+            char[] delimiterChars = { '=', '#'};
             string[] words;
-            Target temp;
-            int iter = 0;
-            string info;
+            Target temp;           
             int friendFoe;
-            string exit;
             
+            try
+            {
+                var lookFile = File.Exists(args[0]);
+                if (lookFile == false)
+                    throw new Exception("Incorrect File Name");
+            }
+            
+            catch (Exception checkUp)
+            {
+                Console.WriteLine(checkUp.Message);
+                Console.ReadLine();
+                return;
+            }
+
             using (TextReader reader = File.OpenText(args[0]))
             {
                 
@@ -174,13 +183,13 @@ namespace homework01
                             case 3:
                                 PrintOrderedTarget(targets);
                                 break;
-                            case 4:
+                            case 4:                               
                                 printPigLatin(targets);
                                 break;
                             case 5:
                                 Console.WriteLine("Choose a Target Number: ");
                                 friendFoe = int.Parse(Console.ReadLine());
-                                friendTarget(targets, friendFoe - 1);
+                                friendTarget(targets, ++friendFoe);
                                 break;
                             case 6:
                                 break;
